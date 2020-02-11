@@ -10,6 +10,6 @@ import UIKit
 
 class HDCollectionViewController: UICollectionViewController {
 
-
+    
 
 }
