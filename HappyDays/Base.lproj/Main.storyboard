@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2jt-fF-0Uq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BUn-F0-KGU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -11,7 +11,7 @@
         <!--Welcome-->
         <scene sceneID="8n1-D6-Tqb">
             <objects>
-                <viewController id="bBN-tm-ZIe" customClass="ViewController" customModule="HappyDays" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PermissionsViewController" id="bBN-tm-ZIe" customClass="PermissionsViewController" customModule="HappyDays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CFd-Vo-0BI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,6 +30,9 @@
                                         <rect key="frame" x="0.0" y="193.5" width="374" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Continue"/>
+                                        <connections>
+                                            <action selector="requestPermissions:" destination="bBN-tm-ZIe" eventType="touchUpInside" id="wBF-X9-tTn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -43,6 +46,9 @@
                         <viewLayoutGuide key="safeArea" id="evv-kO-3YV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="BxQ-t2-ILK"/>
+                    <connections>
+                        <outlet property="descLabel" destination="MVo-ku-YN9" id="jdz-Hh-nW4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn5-sg-NuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +57,7 @@
         <!--Happy Days-->
         <scene sceneID="oGw-Jk-IZE">
             <objects>
-                <collectionViewController id="k8k-lH-CFJ" sceneMemberID="viewController">
+                <collectionViewController id="k8k-lH-CFJ" customClass="HDCollectionViewController" customModule="HappyDays" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7iB-2N-Er4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +69,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dXf-6L-SsT">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HDCollectionViewCell" id="dXf-6L-SsT" customClass="HDCollectionViewCell" customModule="HappyDays" customModuleProvider="target">
                                 <rect key="frame" x="107" y="50" width="200" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7C7-3s-TI8">
@@ -83,9 +89,12 @@
                                         <constraint firstItem="pG0-UR-W5N" firstAttribute="leading" secondItem="7C7-3s-TI8" secondAttribute="leading" id="Zt2-LO-Sb8"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="pG0-UR-W5N" id="1hf-E8-EwQ"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Sgg-fg-akA">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HDCollectionSeachHeader" id="Sgg-fg-akA">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -98,6 +107,9 @@
                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="k8k-lH-CFJ" id="8Vs-Md-82o"/>
+                                    </connections>
                                 </searchBar>
                             </subviews>
                         </collectionReusableView>

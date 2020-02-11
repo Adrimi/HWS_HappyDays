@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		958F37CC23F16EFB00015AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37CB23F16EFB00015AE3 /* AppDelegate.swift */; };
 		958F37CE23F16EFB00015AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37CD23F16EFB00015AE3 /* SceneDelegate.swift */; };
-		958F37D023F16EFB00015AE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37CF23F16EFB00015AE3 /* ViewController.swift */; };
 		958F37D323F16EFB00015AE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958F37D123F16EFB00015AE3 /* Main.storyboard */; };
 		958F37D523F16EFC00015AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 958F37D423F16EFC00015AE3 /* Assets.xcassets */; };
+		958F37E023F1761700015AE3 /* HDCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37DF23F1761700015AE3 /* HDCollectionViewController.swift */; };
+		958F37E223F1765000015AE3 /* HDCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37E123F1765000015AE3 /* HDCollectionViewCell.swift */; };
+		95D3418823F2AA97007511AA /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3418723F2AA97007511AA /* PermissionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		958F37C823F16EFB00015AE3 /* HappyDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		958F37CB23F16EFB00015AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		958F37CD23F16EFB00015AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		958F37CF23F16EFB00015AE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		958F37D223F16EFB00015AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		958F37D423F16EFC00015AE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		958F37D923F16EFC00015AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		958F37DF23F1761700015AE3 /* HDCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDCollectionViewController.swift; sourceTree = "<group>"; };
+		958F37E123F1765000015AE3 /* HDCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDCollectionViewCell.swift; sourceTree = "<group>"; };
+		95D3418723F2AA97007511AA /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				958F37CB23F16EFB00015AE3 /* AppDelegate.swift */,
 				958F37CD23F16EFB00015AE3 /* SceneDelegate.swift */,
-				958F37CF23F16EFB00015AE3 /* ViewController.swift */,
 				958F37D123F16EFB00015AE3 /* Main.storyboard */,
 				958F37D423F16EFC00015AE3 /* Assets.xcassets */,
 				958F37D923F16EFC00015AE3 /* Info.plist */,
+				958F37DF23F1761700015AE3 /* HDCollectionViewController.swift */,
+				95D3418723F2AA97007511AA /* PermissionsViewController.swift */,
+				958F37E123F1765000015AE3 /* HDCollectionViewCell.swift */,
 			);
 			path = HappyDays;
 			sourceTree = "<group>";
@@ -134,9 +140,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958F37D023F16EFB00015AE3 /* ViewController.swift in Sources */,
+				95D3418823F2AA97007511AA /* PermissionsViewController.swift in Sources */,
 				958F37CC23F16EFB00015AE3 /* AppDelegate.swift in Sources */,
 				958F37CE23F16EFB00015AE3 /* SceneDelegate.swift in Sources */,
+				958F37E223F1765000015AE3 /* HDCollectionViewCell.swift in Sources */,
+				958F37E023F1761700015AE3 /* HDCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
