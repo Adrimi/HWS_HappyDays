@@ -21,6 +21,7 @@ class HDCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         loadMemories()
+        setupNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,9 +30,9 @@ class HDCollectionViewController: UICollectionViewController {
         checkPermissions()
     }
     
-    //MARK: - Major mehtods
+    //MARK: - Buisness logic
     private func loadMemories() {
-        /// Remove any existing memories. Avoid duplication( set?)
+        /// Remove any existing memories to avoid duplicaions
         memories.removeAll()
         
         /// Pull out a list of all the files stored in our app's documents directory. This needs to be working with URLs, rather than paths strings
@@ -50,7 +51,22 @@ class HDCollectionViewController: UICollectionViewController {
         collectionView?.reloadSections(IndexSet(integer: 1))
     }
     
+    private func saveNewMemory(image: UIImage) {
+        
+    }
+    
     // MARK: - Helper methods
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+    }
+    
+    @objc private func addTapped() {
+        let vc = UIImagePickerController()
+        vc.modalPresentationStyle = .formSheet
+        vc.delegate = self
+        navigationController?.present(vc, animated: true)
+    }
+    
     private func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
@@ -77,3 +93,16 @@ class HDCollectionViewController: UICollectionViewController {
 
 }
 
+extension HDCollectionViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true)
+        if let possibleImage = info[.originalImage] as? UIImage {
+            saveNewMemory(image: possibleImage)
+            loadMemories()
+        }
+    }
+}
+
+extension HDCollectionViewController: UINavigationControllerDelegate {
+    
+}
