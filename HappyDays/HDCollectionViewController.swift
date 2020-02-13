@@ -61,15 +61,12 @@ class HDCollectionViewController: UICollectionViewController {
         
         /// Create absolute URL paths
         do {
-            let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
-            if let jpegData = image.jpegData(compressionQuality: 0.8) {
-                
-                /// Write data to disk
-                try jpegData.write(to: imagePath, options: [.atomicWrite])
-            }
+            try write(image: image, with: imageName)
             
             /// Create thumbnail image
-            
+            if let thumbnail = resize(image: image, to: 200) {
+                try write(image: thumbnail, with: thumbnailName)
+            }
         } catch {
             print("Failed to save to disk. \(error.localizedDescription)")
         }
@@ -99,6 +96,13 @@ class HDCollectionViewController: UICollectionViewController {
         
         /// Send it back to the caller
         return newImage
+    }
+    
+    private func write(image: UIImage, with imageName: String) throws {
+        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+        if let jpegData = image.jpegData(compressionQuality: 0.8) {
+            try jpegData.write(to: imagePath, options: [.atomicWrite])
+        }
     }
     
     private func setupNavigationBar() {
