@@ -52,10 +52,55 @@ class HDCollectionViewController: UICollectionViewController {
     }
     
     private func saveNewMemory(image: UIImage) {
+        /// Generate new UUID which will be timestamp
+        let memoryName = "memory-\(Date().timeIntervalSince1970)"
+        
+        /// Create filenames
+        let imageName = memoryName + ".jpg"
+        let thumbnailName = memoryName + ".thumb"
+        
+        /// Create absolute URL paths
+        do {
+            let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+            if let jpegData = image.jpegData(compressionQuality: 0.8) {
+                
+                /// Write data to disk
+                try jpegData.write(to: imagePath, options: [.atomicWrite])
+            }
+            
+            /// Create thumbnail image
+            
+        } catch {
+            print("Failed to save to disk. \(error.localizedDescription)")
+        }
         
     }
     
     // MARK: - Helper methods
+    private func resize(image: UIImage, to width: CGFloat) -> UIImage? {
+        /// Calculate how much we need to bring the width down to match our target size
+        let scale = width / image.size.width
+        
+        /// Bring the height down by the same amount so that the aspect ratio is preserved
+        let height = image.size.height * scale
+        
+        /// Create new image context we can draw into
+        let size = CGSize(width: width, height: height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        
+        /// Draw the original image into the context
+        image.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
+        
+        /// Pull out the resized version
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        /// End the context so UIKit can clean up
+        UIGraphicsEndImageContext()
+        
+        /// Send it back to the caller
+        return newImage
+    }
+    
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
