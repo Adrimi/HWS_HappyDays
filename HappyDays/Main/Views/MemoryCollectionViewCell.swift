@@ -1,5 +1,5 @@
 //
-//  HDCollectionViewCell.swift
+//  MemoryCollectionViewCell.swift
 //  HappyDays
 //
 //  Created by adrian.szymanowski on 10/02/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HDCollectionViewCell: UICollectionViewCell {
+class MemoryCollectionViewCell: BaseCollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     

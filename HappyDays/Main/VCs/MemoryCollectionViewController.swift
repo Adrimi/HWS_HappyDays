@@ -1,5 +1,5 @@
 //
-//  HDCollectionViewController.swift
+//  MemoryCollectionViewController.swift
 //  HappyDays
 //
 //  Created by adrian.szymanowski on 10/02/2020.
@@ -11,9 +11,20 @@ import AVFoundation
 import Photos
 import Speech
 
-class HDCollectionViewController: UICollectionViewController {
+class MemoryCollectionViewController: BaseCollectionViewController {
 
     //MARK: - Parametes
+    enum PathExtension: String {
+        case image = "jpg"
+        case thumbnail = "thumb"
+        case audio = "m4a"
+        case transcript = "txt"
+        
+        func URL(for memory: URL) -> URL {
+            memory.appendingPathExtension(self.rawValue)
+        }
+    }
+
     private(set) var memories = [URL]()
     
     // MARK: - Lifecycle
@@ -48,7 +59,8 @@ class HDCollectionViewController: UICollectionViewController {
             memories.append(memoryPath)
         }
         
-        collectionView?.reloadSections(IndexSet(integer: 1))
+//        collectionView?.reloadSections(IndexSet(integer: 1))
+        setupCollectionView()
     }
     
     private func saveNewMemory(image: UIImage) {
@@ -105,6 +117,17 @@ class HDCollectionViewController: UICollectionViewController {
         }
     }
     
+    private func setupCollectionView() {
+        let dataSource = SectionedCollectionViewDataSource.init(
+            dataSources: [
+                CollectionViewDataSource.init(models: [],
+                                              cellConfigurator: SearchCollectionViewCellConfigurator.init()),
+                CollectionViewDataSource.init(models: memories,
+                                              cellConfigurator: MemoryCollectionViewCellConfigurator.init())
+            ]
+        )
+    }
+    
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
@@ -137,12 +160,42 @@ class HDCollectionViewController: UICollectionViewController {
                 navigationController?.present(vc, animated: true)
             }
         }
-        
+         
     }
 
 }
 
-extension HDCollectionViewController: UIImagePickerControllerDelegate {
+// MARK: - CollectionView Data Source
+//extension MemoryCollectionViewController {
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        2
+//    }
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        section == 0 ? 0 : memories.count
+//    }
+//}
+//
+//// MARK: - BaseCollectionView Delegate
+//extension MemoryCollectionViewController {
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell: HDCollectionViewCell = collectionView.dequeue(for: indexPath)
+//        let model = memories[indexPath.row]
+//        let imageName = PathExtension.thumbnail.URL(for: model).path
+//        let image = UIImage(contentsOfFile: imageName)
+//
+//        cell.setup(with: image)
+//
+//        return cell
+//    }
+//
+//    func collectionView(_ collectionView: BaseCollectionViewController, cellForItemAt indexPath: IndexPath) -> BaseCollectionViewCell {
+//
+//    }
+//
+//}
+
+
+extension MemoryCollectionViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true)
         if let possibleImage = info[.originalImage] as? UIImage {
@@ -152,6 +205,6 @@ extension HDCollectionViewController: UIImagePickerControllerDelegate {
     }
 }
 
-extension HDCollectionViewController: UINavigationControllerDelegate {
+extension MemoryCollectionViewController: UINavigationControllerDelegate {
     
 }

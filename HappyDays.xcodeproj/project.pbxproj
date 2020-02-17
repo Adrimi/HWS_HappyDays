@@ -7,24 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9577239B23F6A4F200A7BEA5 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577239A23F6A4F200A7BEA5 /* ReuseIdentifiable.swift */; };
+		957723A023F6A7F600A7BEA5 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577239F23F6A7F600A7BEA5 /* BaseCollectionViewCell.swift */; };
+		957723A223F6A85700A7BEA5 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723A123F6A85700A7BEA5 /* BaseCollectionViewController.swift */; };
+		957723A623F6B4D100A7BEA5 /* MemoryCollectionViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723A523F6B4D100A7BEA5 /* MemoryCollectionViewCellConfigurator.swift */; };
+		957723A923F6B61D00A7BEA5 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723A823F6B61D00A7BEA5 /* Memory.swift */; };
+		957723AE23F6B6DC00A7BEA5 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723AD23F6B6DC00A7BEA5 /* CollectionViewDataSource.swift */; };
+		957723B023F6B74800A7BEA5 /* SectionedCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723AF23F6B74800A7BEA5 /* SectionedCollectionViewDataSource.swift */; };
+		957723B223F6C02B00A7BEA5 /* UIView+reuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723B123F6C02B00A7BEA5 /* UIView+reuseIdentifiable.swift */; };
+		957723B423F6C34000A7BEA5 /* SearchCollectionViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723B323F6C34000A7BEA5 /* SearchCollectionViewCellConfigurator.swift */; };
+		957723B623F6C3DC00A7BEA5 /* CollectionCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723B523F6C3DC00A7BEA5 /* CollectionCellConfigurable.swift */; };
+		957723B823F6CC4800A7BEA5 /* CollectionCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723B723F6CC4800A7BEA5 /* CollectionCellConfigurator.swift */; };
+		957723BA23F6CEEE00A7BEA5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957723B923F6CEEE00A7BEA5 /* Search.swift */; };
 		958F37CC23F16EFB00015AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37CB23F16EFB00015AE3 /* AppDelegate.swift */; };
 		958F37CE23F16EFB00015AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37CD23F16EFB00015AE3 /* SceneDelegate.swift */; };
 		958F37D323F16EFB00015AE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958F37D123F16EFB00015AE3 /* Main.storyboard */; };
 		958F37D523F16EFC00015AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 958F37D423F16EFC00015AE3 /* Assets.xcassets */; };
-		958F37E023F1761700015AE3 /* HDCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37DF23F1761700015AE3 /* HDCollectionViewController.swift */; };
-		958F37E223F1765000015AE3 /* HDCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37E123F1765000015AE3 /* HDCollectionViewCell.swift */; };
+		958F37E023F1761700015AE3 /* MemoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37DF23F1761700015AE3 /* MemoryCollectionViewController.swift */; };
+		958F37E223F1765000015AE3 /* MemoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37E123F1765000015AE3 /* MemoryCollectionViewCell.swift */; };
 		95D3418823F2AA97007511AA /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3418723F2AA97007511AA /* PermissionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9577239A23F6A4F200A7BEA5 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		9577239F23F6A7F600A7BEA5 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		957723A123F6A85700A7BEA5 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		957723A523F6B4D100A7BEA5 /* MemoryCollectionViewCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCollectionViewCellConfigurator.swift; sourceTree = "<group>"; };
+		957723A823F6B61D00A7BEA5 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		957723AD23F6B6DC00A7BEA5 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		957723AF23F6B74800A7BEA5 /* SectionedCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		957723B123F6C02B00A7BEA5 /* UIView+reuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+reuseIdentifiable.swift"; sourceTree = "<group>"; };
+		957723B323F6C34000A7BEA5 /* SearchCollectionViewCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCellConfigurator.swift; sourceTree = "<group>"; };
+		957723B523F6C3DC00A7BEA5 /* CollectionCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellConfigurable.swift; sourceTree = "<group>"; };
+		957723B723F6CC4800A7BEA5 /* CollectionCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellConfigurator.swift; sourceTree = "<group>"; };
+		957723B923F6CEEE00A7BEA5 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		958F37C823F16EFB00015AE3 /* HappyDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		958F37CB23F16EFB00015AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		958F37CD23F16EFB00015AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		958F37D223F16EFB00015AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		958F37D423F16EFC00015AE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		958F37D923F16EFC00015AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		958F37DF23F1761700015AE3 /* HDCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDCollectionViewController.swift; sourceTree = "<group>"; };
-		958F37E123F1765000015AE3 /* HDCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDCollectionViewCell.swift; sourceTree = "<group>"; };
+		958F37DF23F1761700015AE3 /* MemoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCollectionViewController.swift; sourceTree = "<group>"; };
+		958F37E123F1765000015AE3 /* MemoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		95D3418723F2AA97007511AA /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +63,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95480BA523FA88D700BF3D00 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9577239F23F6A7F600A7BEA5 /* BaseCollectionViewCell.swift */,
+				957723A123F6A85700A7BEA5 /* BaseCollectionViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9577239523F6A43200A7BEA5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				95480BA523FA88D700BF3D00 /* Base */,
+				957723A423F6B4B700A7BEA5 /* Configurators */,
+				9577239E23F6A7B000A7BEA5 /* Components */,
+				9577239923F6A4E500A7BEA5 /* Protocols */,
+				9577239623F6A43900A7BEA5 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9577239623F6A43900A7BEA5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				957723B123F6C02B00A7BEA5 /* UIView+reuseIdentifiable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9577239923F6A4E500A7BEA5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				957723B523F6C3DC00A7BEA5 /* CollectionCellConfigurable.swift */,
+				9577239A23F6A4F200A7BEA5 /* ReuseIdentifiable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9577239E23F6A7B000A7BEA5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				957723AD23F6B6DC00A7BEA5 /* CollectionViewDataSource.swift */,
+				957723AF23F6B74800A7BEA5 /* SectionedCollectionViewDataSource.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		957723A323F6A94700A7BEA5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				957723AC23F6B64C00A7BEA5 /* Views */,
+				957723AB23F6B64500A7BEA5 /* VMs */,
+				957723AA23F6B63900A7BEA5 /* VCs */,
+				957723A723F6B61300A7BEA5 /* Models */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		957723A423F6B4B700A7BEA5 /* Configurators */ = {
+			isa = PBXGroup;
+			children = (
+				957723B723F6CC4800A7BEA5 /* CollectionCellConfigurator.swift */,
+				957723A523F6B4D100A7BEA5 /* MemoryCollectionViewCellConfigurator.swift */,
+				957723B323F6C34000A7BEA5 /* SearchCollectionViewCellConfigurator.swift */,
+			);
+			path = Configurators;
+			sourceTree = "<group>";
+		};
+		957723A723F6B61300A7BEA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				957723A823F6B61D00A7BEA5 /* Memory.swift */,
+				957723B923F6CEEE00A7BEA5 /* Search.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		957723AA23F6B63900A7BEA5 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				95D3418723F2AA97007511AA /* PermissionsViewController.swift */,
+				958F37DF23F1761700015AE3 /* MemoryCollectionViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		957723AB23F6B64500A7BEA5 /* VMs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VMs;
+			sourceTree = "<group>";
+		};
+		957723AC23F6B64C00A7BEA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				958F37E123F1765000015AE3 /* MemoryCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		958F37BF23F16EFB00015AE3 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +183,13 @@
 		958F37CA23F16EFB00015AE3 /* HappyDays */ = {
 			isa = PBXGroup;
 			children = (
+				957723A323F6A94700A7BEA5 /* Main */,
+				9577239523F6A43200A7BEA5 /* Common */,
 				958F37CB23F16EFB00015AE3 /* AppDelegate.swift */,
 				958F37CD23F16EFB00015AE3 /* SceneDelegate.swift */,
 				958F37D123F16EFB00015AE3 /* Main.storyboard */,
 				958F37D423F16EFC00015AE3 /* Assets.xcassets */,
 				958F37D923F16EFC00015AE3 /* Info.plist */,
-				958F37DF23F1761700015AE3 /* HDCollectionViewController.swift */,
-				95D3418723F2AA97007511AA /* PermissionsViewController.swift */,
-				958F37E123F1765000015AE3 /* HDCollectionViewCell.swift */,
 			);
 			path = HappyDays;
 			sourceTree = "<group>";
@@ -141,10 +265,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D3418823F2AA97007511AA /* PermissionsViewController.swift in Sources */,
+				957723B423F6C34000A7BEA5 /* SearchCollectionViewCellConfigurator.swift in Sources */,
+				957723B623F6C3DC00A7BEA5 /* CollectionCellConfigurable.swift in Sources */,
+				957723AE23F6B6DC00A7BEA5 /* CollectionViewDataSource.swift in Sources */,
+				957723BA23F6CEEE00A7BEA5 /* Search.swift in Sources */,
+				957723B823F6CC4800A7BEA5 /* CollectionCellConfigurator.swift in Sources */,
+				957723A023F6A7F600A7BEA5 /* BaseCollectionViewCell.swift in Sources */,
+				9577239B23F6A4F200A7BEA5 /* ReuseIdentifiable.swift in Sources */,
 				958F37CC23F16EFB00015AE3 /* AppDelegate.swift in Sources */,
+				957723B223F6C02B00A7BEA5 /* UIView+reuseIdentifiable.swift in Sources */,
 				958F37CE23F16EFB00015AE3 /* SceneDelegate.swift in Sources */,
-				958F37E223F1765000015AE3 /* HDCollectionViewCell.swift in Sources */,
-				958F37E023F1761700015AE3 /* HDCollectionViewController.swift in Sources */,
+				957723A623F6B4D100A7BEA5 /* MemoryCollectionViewCellConfigurator.swift in Sources */,
+				957723A223F6A85700A7BEA5 /* BaseCollectionViewController.swift in Sources */,
+				958F37E223F1765000015AE3 /* MemoryCollectionViewCell.swift in Sources */,
+				957723A923F6B61D00A7BEA5 /* Memory.swift in Sources */,
+				957723B023F6B74800A7BEA5 /* SectionedCollectionViewDataSource.swift in Sources */,
+				958F37E023F1761700015AE3 /* MemoryCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
