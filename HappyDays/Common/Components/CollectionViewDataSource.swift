@@ -9,24 +9,21 @@
 import UIKit
 
 class CollectionViewDataSource<Model>: NSObject, UICollectionViewDataSource {
-    
     typealias CellConfigurator = CollectionCellConfigurator<Model>
     
     // MARK: - Parameters
-    var models: [Model]
     private let cellConfigurator: CellConfigurator
     
-    init(models: [Model], cellConfigurator: CellConfigurator) {
-        self.models = models
+    init(cellConfigurator: CellConfigurator) {
         self.cellConfigurator = cellConfigurator
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        models.count
+        cellConfigurator.models.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = models[indexPath.item]
+        let model = cellConfigurator.models[indexPath.item]
         let cell = collectionView.dequeue(for: indexPath)
         
         cellConfigurator.configure(cell, forDisplaying: model)

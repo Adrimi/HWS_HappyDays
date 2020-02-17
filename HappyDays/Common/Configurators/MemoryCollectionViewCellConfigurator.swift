@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MemoryCollectionViewCellConfigurator: CollectionCellConfigurator<Memory> {
-    override func configure(_ cell: UICollectionViewCell, forDisplaying model: Memory) {
+class MemoryCollectionViewCellConfigurator: CollectionCellConfigurator<UIImage> {
+    override func configure(_ cell: UICollectionViewCell, forDisplaying model: UIImage) {
         if let c = cell as? MemoryCollectionViewCell {
-            c.imageView.image = model.image
+            c.imageView.image = model
         }
     }
 }

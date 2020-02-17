@@ -9,6 +9,12 @@
 import UIKit
 
 class CollectionCellConfigurator<Model>: CollectionCellConfigurable {
+    let models: [Model]
+    
+    init(_ models: [Model]) {
+        self.models = models
+    }
+    
     func configure(_ cell: UICollectionViewCell, forDisplaying model: Model) {
         fatalError("CollectionCellConfigurator configure not implemented")
     }

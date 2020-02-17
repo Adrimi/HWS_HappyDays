@@ -20,7 +20,7 @@ class MemoryCollectionViewController: BaseCollectionViewController {
         case audio = "m4a"
         case transcript = "txt"
         
-        func URL(for memory: URL) -> URL {
+        func makeURL(for memory: URL) -> URL {
             memory.appendingPathExtension(self.rawValue)
         }
     }
@@ -118,14 +118,17 @@ class MemoryCollectionViewController: BaseCollectionViewController {
     }
     
     private func setupCollectionView() {
+        
+        let images = memories
+            .compactMap { PathExtension.image.makeURL(for: $0).path }
+            .compactMap { UIImage(contentsOfFile: $0) }
+        
         let dataSource = SectionedCollectionViewDataSource.init(
             dataSources: [
-                CollectionViewDataSource.init(models: [],
-                                              cellConfigurator: SearchCollectionViewCellConfigurator.init()),
-                CollectionViewDataSource.init(models: memories,
-                                              cellConfigurator: MemoryCollectionViewCellConfigurator.init())
+                CollectionViewDataSource.init(cellConfigurator: MemoryCollectionViewCellConfigurator.init(images))
             ]
         )
+        collectionView.dataSource = dataSource
     }
     
     private func setupNavigationBar() {

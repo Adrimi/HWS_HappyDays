@@ -17,13 +17,6 @@ class PermissionsViewController: UIViewController {
     // MARK: - Parameters
     @IBOutlet weak var descLabel: UILabel!
     
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
-    }
-    
     // MARK: - IBActions
     @IBAction func requestPermissions(_ sender: Any) {
         requestPhotoPermissions()
