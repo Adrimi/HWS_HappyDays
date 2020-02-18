@@ -14,5 +14,4 @@ extension ReuseIdentifiable where Self: UIResponder {
     }
 }
 
-extension UICollectionViewCell: ReuseIdentifiable {}
 extension UICollectionReusableView: ReuseIdentifiable {}

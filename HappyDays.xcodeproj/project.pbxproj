@@ -23,6 +23,8 @@
 		958F37D523F16EFC00015AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 958F37D423F16EFC00015AE3 /* Assets.xcassets */; };
 		958F37E023F1761700015AE3 /* MemoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37DF23F1761700015AE3 /* MemoryCollectionViewController.swift */; };
 		958F37E223F1765000015AE3 /* MemoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F37E123F1765000015AE3 /* MemoryCollectionViewCell.swift */; };
+		95A3940923FC44A9008B974E /* CollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3940823FC44A9008B974E /* CollectionViewDelegateFlowLayout.swift */; };
+		95A3940B23FC4522008B974E /* ColllectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3940A23FC4522008B974E /* ColllectionViewDelegate.swift */; };
 		95D3418823F2AA97007511AA /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3418723F2AA97007511AA /* PermissionsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		958F37D923F16EFC00015AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		958F37DF23F1761700015AE3 /* MemoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCollectionViewController.swift; sourceTree = "<group>"; };
 		958F37E123F1765000015AE3 /* MemoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		95A3940823FC44A9008B974E /* CollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
+		95A3940A23FC4522008B974E /* ColllectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColllectionViewDelegate.swift; sourceTree = "<group>"; };
 		95D3418723F2AA97007511AA /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +106,8 @@
 			children = (
 				957723AD23F6B6DC00A7BEA5 /* CollectionViewDataSource.swift */,
 				957723AF23F6B74800A7BEA5 /* SectionedCollectionViewDataSource.swift */,
+				95A3940823FC44A9008B974E /* CollectionViewDelegateFlowLayout.swift */,
+				95A3940A23FC4522008B974E /* ColllectionViewDelegate.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D3418823F2AA97007511AA /* PermissionsViewController.swift in Sources */,
+				95A3940B23FC4522008B974E /* ColllectionViewDelegate.swift in Sources */,
 				957723B423F6C34000A7BEA5 /* SearchCollectionReusableViewConfigurator.swift in Sources */,
 				957723B623F6C3DC00A7BEA5 /* CollectionCellConfigurable.swift in Sources */,
 				957723AE23F6B6DC00A7BEA5 /* CollectionViewDataSource.swift in Sources */,
@@ -267,6 +274,7 @@
 				955555C323FC2BEE00AEE31D /* SearchCollectionReusableView.swift in Sources */,
 				958F37CC23F16EFB00015AE3 /* AppDelegate.swift in Sources */,
 				957723B223F6C02B00A7BEA5 /* UICollectionCell+dequeue.swift in Sources */,
+				95A3940923FC44A9008B974E /* CollectionViewDelegateFlowLayout.swift in Sources */,
 				958F37CE23F16EFB00015AE3 /* SceneDelegate.swift in Sources */,
 				957723A623F6B4D100A7BEA5 /* MemoryCollectionViewCellConfigurator.swift in Sources */,
 				957723A223F6A85700A7BEA5 /* BaseCollectionViewController.swift in Sources */,
