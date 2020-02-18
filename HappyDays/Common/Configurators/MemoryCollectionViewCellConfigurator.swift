@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MemoryCollectionViewCellConfigurator: CollectionCellConfigurator<UIImage> {
-    override func configure(_ cell: UICollectionViewCell, forDisplaying model: UIImage) {
-        if let c = cell as? MemoryCollectionViewCell {
+class MemoryCollectionViewCellConfigurator: CollectionCellConfigurable {
+    func configure(_ cell: UICollectionViewCell, with model: Any) {
+        if let c = cell as? MemoryCollectionViewCell, let model = model as? UIImage {
             c.imageView.image = model
         }
     }

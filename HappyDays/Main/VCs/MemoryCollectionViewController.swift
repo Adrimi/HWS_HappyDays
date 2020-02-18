@@ -26,6 +26,7 @@ class MemoryCollectionViewController: BaseCollectionViewController {
     }
 
     private(set) var memories = [URL]()
+    private(set) var dataSource: UICollectionViewDataSource?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -123,11 +124,15 @@ class MemoryCollectionViewController: BaseCollectionViewController {
             .compactMap { PathExtension.image.makeURL(for: $0).path }
             .compactMap { UIImage(contentsOfFile: $0) }
         
-        let dataSource = SectionedCollectionViewDataSource.init(
-            dataSources: [
-                CollectionViewDataSource.init(cellConfigurator: MemoryCollectionViewCellConfigurator.init(images))
-            ]
-        )
+//        let dataSource = SectionedCollectionViewDataSource.init(
+//            dataSources: [
+//                CollectionViewDataSource.init(models: [], rID: SearchCollectionReusableView.rID, configurator: SearchCollectionReusableViewConfigurator.init()),
+//                CollectionViewDataSource.init(models: images, rID: MemoryCollectionViewCell.rID, configurator: MemoryCollectionViewCellConfigurator.init())
+//            ]
+//        )
+        let dataSource = CollectionViewDataSource.init(models: images, rID: MemoryCollectionViewCell.rID, configurator: MemoryCollectionViewCellConfigurator.init())
+        
+        self.dataSource = dataSource
         collectionView.dataSource = dataSource
     }
     
@@ -167,36 +172,6 @@ class MemoryCollectionViewController: BaseCollectionViewController {
     }
 
 }
-
-// MARK: - CollectionView Data Source
-//extension MemoryCollectionViewController {
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        2
-//    }
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        section == 0 ? 0 : memories.count
-//    }
-//}
-//
-//// MARK: - BaseCollectionView Delegate
-//extension MemoryCollectionViewController {
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell: HDCollectionViewCell = collectionView.dequeue(for: indexPath)
-//        let model = memories[indexPath.row]
-//        let imageName = PathExtension.thumbnail.URL(for: model).path
-//        let image = UIImage(contentsOfFile: imageName)
-//
-//        cell.setup(with: image)
-//
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: BaseCollectionViewController, cellForItemAt indexPath: IndexPath) -> BaseCollectionViewCell {
-//
-//    }
-//
-//}
-
 
 extension MemoryCollectionViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

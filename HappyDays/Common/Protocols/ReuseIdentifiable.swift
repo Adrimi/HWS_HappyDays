@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ReuseIdentifiable {
+public protocol ReuseIdentifiable {
     static var rID: String { get }
 }

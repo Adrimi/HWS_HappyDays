@@ -9,25 +9,42 @@
 import UIKit
 
 class CollectionViewDataSource<Model>: NSObject, UICollectionViewDataSource {
-    typealias CellConfigurator = CollectionCellConfigurator<Model>
+    typealias Configurator = CollectionCellConfigurable
     
     // MARK: - Parameters
-    private let cellConfigurator: CellConfigurator
+    // NOTE: - Only this Datasource should store models array
+    private let models: [Model]
+    private let rID: String
+    private let configurator: Configurator
     
-    init(cellConfigurator: CellConfigurator) {
-        self.cellConfigurator = cellConfigurator
+    init(models: [Model], rID: String, configurator: Configurator) {
+        self.models = models
+        self.rID = rID
+        self.configurator = configurator
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        cellConfigurator.models.count
+    @objc func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = cellConfigurator.models[indexPath.item]
-        let cell = collectionView.dequeue(for: indexPath)
+    @objc func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        models.count
+    }
+    
+    @objc func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let model = models[indexPath.item]
+        print("section: \(indexPath.section), item: \(indexPath.item)")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: rID, for: indexPath)
         
-        cellConfigurator.configure(cell, forDisplaying: model)
+        configurator.configure(cell, with: model)
         
+        print(cell.frame)
         return cell
     }
+    /**
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: rID, for: indexPath)
+        return view
+    }
+ */
 }

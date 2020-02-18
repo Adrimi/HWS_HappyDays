@@ -9,7 +9,5 @@
 import UIKit
 
 protocol CollectionCellConfigurable {
-    associatedtype Model
-    
-    func configure(_ cell: UICollectionViewCell, forDisplaying model: Model)
+    func configure(_ cell: UICollectionViewCell, with model: Any)
 }
