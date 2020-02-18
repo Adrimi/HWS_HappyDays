@@ -124,13 +124,13 @@ class MemoryCollectionViewController: BaseCollectionViewController {
             .compactMap { PathExtension.image.makeURL(for: $0).path }
             .compactMap { UIImage(contentsOfFile: $0) }
         
-//        let dataSource = SectionedCollectionViewDataSource.init(
-//            dataSources: [
+        let dataSource = SectionedCollectionViewDataSource.init(
+            dataSources: [
 //                CollectionViewDataSource.init(models: [], rID: SearchCollectionReusableView.rID, configurator: SearchCollectionReusableViewConfigurator.init()),
-//                CollectionViewDataSource.init(models: images, rID: MemoryCollectionViewCell.rID, configurator: MemoryCollectionViewCellConfigurator.init())
-//            ]
-//        )
-        let dataSource = CollectionViewDataSource.init(models: images, rID: MemoryCollectionViewCell.rID, configurator: MemoryCollectionViewCellConfigurator.init())
+                CollectionViewDataSource.init(models: images, rID: MemoryCollectionViewCell.rID, configurator: MemoryCollectionViewCellConfigurator.init())
+            ]
+        )
+//        let dataSource = CollectionViewDataSource.init(models: images, rID: MemoryCollectionViewCell.rID, configurator: MemoryCollectionViewCellConfigurator.init())
         
         self.dataSource = dataSource
         collectionView.dataSource = dataSource
