@@ -1,5 +1,5 @@
 //
-//  MemoryCollectionViewController.swift
+//  MemoryViewController.swift
 //  HappyDays
 //
 //  Created by adrian.szymanowski on 10/02/2020.
@@ -11,9 +11,13 @@ import AVFoundation
 import Photos
 import Speech
 
-class MemoryCollectionViewController: BaseCollectionViewController {
+class MemoryViewController: BaseViewController {
 
-    //MARK: - Parametes
+    // MARK: - IBOutlets
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    // MARK: - Parametes
     enum PathExtension: String {
         case image = "jpg"
         case thumbnail = "thumb"
@@ -33,7 +37,9 @@ class MemoryCollectionViewController: BaseCollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadMemories()
+        DispatchQueue.global().async {
+            self.loadMemories()
+        }
         setupNavigationBar()
     }
     
@@ -61,7 +67,6 @@ class MemoryCollectionViewController: BaseCollectionViewController {
             memories.append(memoryPath)
         }
         
-//        collectionView?.reloadSections(IndexSet(integer: 1))
         setupCollectionView()
     }
     
@@ -127,19 +132,19 @@ class MemoryCollectionViewController: BaseCollectionViewController {
         
         let dataSource = SectionedCollectionViewDataSource.init(
             dataSources: [
-                CollectionViewDataSource.init(models: [], rID: SearchCollectionReusableView.rID, configurator: SearchCollectionReusableViewConfigurator.init()),
                 CollectionViewDataSource.init(models: images, rID: MemoryCollectionViewCell.rID, configurator: MemoryCollectionViewCellConfigurator.init())
             ]
         )
         
-        let delegate = CollectionViewDelegateFlowLayout.init()
-        
         self.dataSource = dataSource
-        self.delegate = delegate
         
-        
-        collectionView.dataSource = dataSource
-        collectionView.delegate = delegate
+        DispatchQueue.main.async {
+            self.collectionView.dataSource = dataSource
+            
+            UIView.animate(withDuration: 2) {
+                self.collectionView.collectionViewLayout.invalidateLayout()
+            }
+        }
     }
     
     private func setupNavigationBar() {
@@ -179,7 +184,7 @@ class MemoryCollectionViewController: BaseCollectionViewController {
 
 }
 
-extension MemoryCollectionViewController: UIImagePickerControllerDelegate {
+extension MemoryViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true)
         if let possibleImage = info[.originalImage] as? UIImage {
@@ -189,6 +194,25 @@ extension MemoryCollectionViewController: UIImagePickerControllerDelegate {
     }
 }
 
-extension MemoryCollectionViewController: UINavigationControllerDelegate {
+extension MemoryViewController: UINavigationControllerDelegate {
     
+}
+
+extension MemoryViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = MemoryViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        nc.modalPresentationStyle = .fullScreen
+        present(nc, animated: true)
+    }
+}
+
+extension MemoryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if memories.isEmpty {
+            return .zero
+        } else {
+            return .init(width: 200, height: 100)
+        }
+    }
 }

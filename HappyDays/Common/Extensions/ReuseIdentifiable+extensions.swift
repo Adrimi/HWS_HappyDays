@@ -8,10 +8,10 @@
 
 import UIKit
 
-extension ReuseIdentifiable where Self: UIResponder {
-    public static var rID: String {
+extension ReuseIdentifiable {
+    static var rID: String {
         String.init(describing: self)
     }
 }
 
-extension UICollectionReusableView: ReuseIdentifiable {}
+extension UICollectionViewCell: ReuseIdentifiable {}

@@ -1,5 +1,5 @@
 //
-//  BaseCollectionViewController.swift
+//  BaseViewController.swift
 //  HappyDays
 //
 //  Created by adrian.szymanowski on 14/02/2020.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class BaseCollectionViewController: UICollectionViewController {
+class BaseViewController: UIViewController {
     
 }
